@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {%- comment -%}
+    S.H -  content_for_header: Shopify requires placing this output tag inside your layout’s section. It’ll use this location to add Shopify-side JavaScript, styles, and tracking code on every page rendered on your storefront.
+I ammended this commit
+    {%- endcomment -%}
+
     {{ content_for_header }}
     {{- 'bootstrap.min.css' | asset_url | stylesheet_tag -}}
     {{- 'styles.css' | asset_url | stylesheet_tag -}}
   </head>
   <body class="bg-faded no-js">
     {%- section 'header' -%}
+
+    {%- comment -%}
+    S.H - {{ content_for_layout }}: Shopify requires placing this output tag inside your layout’s body section. This will be where the content for each of your individual page templates (page.liquid, article. liquid, etc.) will be rendered.
+    {%- endcomment -%}
     {{ content_for_layout }}
     {%- section 'footer' -%}
     {{- 'jquery-3.1.1.min.js' | asset_url | script_tag -}}
