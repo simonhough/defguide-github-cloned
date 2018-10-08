@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    {%- comment -%}
+    S.H - These tags (styles.css, asset_url, stylesheet_tag, and  theme.js, asset_url, script_tag) aren’t  strictly required, but I’ve included them in the default layout as you’ll always want your site-wide stylesheet and scripts added on every page. asset_url and stylesheet_tag / script_tag are Liquid filters  that convert the name of a particular asset ('theme.js') first into  a reference to that asset on Shopify’s CDN, and then to a HTML tag that will load that asset, e.g., script src="//cdn.shopify.com/s/
+files/1/1744/7651/t/2/assets/theme.js?2331723957652526606" type="text/javascript"/script.
+    {%- endcomment -%}
+
+
     {%- comment -%}
     S.H -  content_for_header: Shopify requires placing this output tag inside your layout’s section. It’ll use this location to add Shopify-side JavaScript, styles, and tracking code on every page rendered on your storefront.
 I ammended this commit
