@@ -1,4 +1,7 @@
 {% schema %}
+    {%- comment -%}
+    S.H - Like with sections/header.liquid, we need to include a schema section at the top to allow users to customize the footer. It makes sense to use blocks when you’d like to allow the theme owner to define repeated sections of content, or control the order content appears in. In this footer, we defined two type of blocks within the footer section—a link_list type and a payment_icons type. The first allows the rendering of a vertical navigation menu within a footer column, the second displays a list of supported payment icons on the storefront.
+    {%- endcomment -%}
 {
   "name": "Footer",
   "blocks": [
