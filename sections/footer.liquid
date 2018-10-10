@@ -26,6 +26,9 @@
 <footer class="bg-faded py-5">
   <div class="container">
     <div class="row">
+      {%- comment -%}
+      S.H - The code loops over each block configured in the section, checks its type, and includes either footer-block-link-list.liquid or footer-block-payment- icons.liquid. These are Liquid snippet files, stored in the theme’s snippets directory in order to logically partition and simplify the code in the footer.liquid section.
+      {%- endcomment -%}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'link_list' -%}
