@@ -4,7 +4,7 @@
     {%- comment -%}
       Product details for display on mobile.
     {%- endcomment -%}
-    <div class="hidden-md-up text-center mb-3">
+    <div class="d-md-none text-center mb-3">
       <h1 >{{ product.title | escape }}</h1>
       <h5 class="text-muted">{{ product.vendor | escape }}</h5>
       <h3>{% if product.price_varies %}{{ product.price_min | money }} - {{ product.price_max | money }}{% else %}{{ product.price | money }}{% endif %}</h3>
@@ -35,7 +35,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <div class="row hidden-sm-down">
+          <div class="row d-none d-md-block">
             {%- for image in product.images -%}
               <div class="col-md-3 mt-3">
                 <a href="{{ image | product_img_url: 'master' }}" target="_blank" data-target="#product-image-carousel" data-slide-to="{{ forloop.index0 }}">
@@ -57,7 +57,7 @@
         {%- comment -%}
           Product details for display on non-mobile.
         {%- endcomment -%}
-        <div class="hidden-sm-down">
+        <div class="d-none d-md-block">
           <h1>{{ product.title | escape }}</h1>
           <h5 class="text-muted">{{ product.vendor | escape }}</h5>
           <h3>{% if product.price_varies %}{{ product.price_min | money }} - {{ product.price_max | money }}{% else %}{{ product.price | money }}{% endif %}</h3>
