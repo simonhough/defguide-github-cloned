@@ -1,5 +1,4 @@
 {%- comment -%}
-
   Find a list of up to 4 related products for the `product` in the current context, and display
   them using the theme's `product.liquid` snippet.
 
@@ -7,15 +6,11 @@
 
     1. A `theme.related_products` metafield on the product object, which is expected to contain
        a comma-separated list of related product handles.
-
     2. A collection with the handle `product-handle-related`, where `product-handle` is the handle
        of the current product.
-
     3. If neither of these are detected, the list of products is calculated manually by:
-
          (a) first, finding a "relevant" collection (defined as a collection the current product is
              in that isn't the `all` collection and that contains more than 4 products;
-
          (b) second, scoring each of the products in that collection by virtue of similarities in
              tags.
 
