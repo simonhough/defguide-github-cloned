@@ -59,9 +59,7 @@
         Your cart is empty.
       </p>
     {%- endif -%}
-
     {%- include 'cart-upsell' -%}
-
   </div>
 </main>
 
@@ -71,3 +69,5 @@
     fetchShippingRateEstimate('#cart-shipping', {{ customer.default_address | json }});
   </script>
 {%- endcapture -%}
+
+

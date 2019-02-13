@@ -1,0 +1,24 @@
+<h1>{{ pages.title }}</h1>
+<h1>{{ pages.author }} says...</h1>
+<h1>{{ pages.content }}</h1>
+
+<h1> {{ page.handle }} </h1>
+<h1> {{ page.id }} </h1>
+<h1> {{ page.published_at }} </h1>
+<h1> {{ page.template_suffix }} </h1>
+<h1> {{ page.title }} </h1>
+<h1> {{ page.url }} </h1>
+
+
+
+{% if settings.logo %}
+    {{ settings.logo | img_url | img_tag: shop.name }}
+{% else %}
+    <span class="no-logo">{{ shop.name }}</span>
+{% endif %}
+
+
+<body class="{{ template }}">
+
+Visit the <a href="/admin/themes/{{ theme.id }}/settings">theme editor</a>.
+

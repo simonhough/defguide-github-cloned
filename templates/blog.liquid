@@ -1,0 +1,73 @@
+
+<ul>
+    {% for  article in blogs.news.articles  %}
+    <li>{{ article.title | link_to: article.url }}</li>
+       {{ blog.title }} </br>
+        {{ product.image}}
+        Page {{ current_page }}
+        {{ product.title }}
+    {% endfor %}
+</ul>
+
+<ul>
+{% for product in collections.womens-collection.products %}
+     {{ product.title }} </br>
+     {{ current_tags }}
+
+{% endfor %}
+</ul>
+
+<ul>
+    {% for link in linklists.main-menu.links %}
+        <li>{{ link.title | link_to: link.url }}</li>
+
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for image in collections.womens-collection.products %}
+{% assign image = images['5-panel-hat'] %}
+<img src="{{ image }}" alt="{{ image.alt }}">
+   {% endfor %}
+</ul>
+
+
+Visit the <a href="/admin/themes/{{ theme.id }}/settings">theme editor</a>.
+<ul>
+{% assign image = images['5-panel-hat.jpg'] %}
+    <li><img src="{{ image }}" alt="{{ image.alt }}"></li>
+    {{ template }} </br>
+</ul>
+
+
+<select name="country">
+    {{ all_country_option_tags }}
+
+</select>
+
+<ul>
+{% for article in blogs.news.articles  %}
+    <li>{{ article.content  }}</li></br>
+{% endfor %}
+</ul>
+
+{% for product in collections.frontpage.products %}
+    {{ product.title }}
+{% endfor %}
+
+<!-- in blog.liquid -->
+{% if current_tags %}
+    <h1>{{ blog.title | link_to: blog.url }} &rsaquo; {{ current_tags.first }}</h1>
+{% else %}
+    <h1>{{ blog.title }}</h1>
+{% endif %}
+
+
+
+{% if handle %}
+    <p>You are either looking at a product, a collection, a page, a blog, or an article in a blog.<p>
+{{ handle }}
+{% else %}
+    <p>You must be somewhere else. Hope you're having fun!</p>
+{% endif %}
+
