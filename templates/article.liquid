@@ -77,4 +77,25 @@
 {% endif %}
 <!-- END Comments -->
 
+
+  {% for tag in article.tags %}
+    {{ tag }} ({{ tag.total_count }})  <br />
+  {% endfor %}
+
+  {% for tag in blog.all_tags %}
+    {{ tag }}
+  {% endfor %}
+  <br /><br />
+
+  <ul>
+    {% for article in blogs.news.articles  %}
+      <li>{{ article.title | link_to: article.url }}</li>
+      {{ blog.title }} </br>
+      {{ product.image}}
+      Page {{ current_page }}
+      {{ product.title }}
+
+    {% endfor %}
+  </ul>
+
 </div>
