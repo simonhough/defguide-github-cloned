@@ -53,6 +53,15 @@
             </tr>
           </tfoot>
         </table>
+
+        <p class="cart-attribute__field">
+          <label>wah, I want my order gift wrapped</label><br>
+          <select required class="required" id="wah-i-want-my-order-gift-wrapped" name="attributes[wah, I want my order gift wrapped]">
+            <option value="Option 1"{% if cart.attributes["wah, I want my order gift wrapped"] == "Option 1" %} selected{% endif %}>Option 1</option>
+            <option value="Option 2"{% if cart.attributes["wah, I want my order gift wrapped"] == "Option 2" %} selected{% endif %}>Option 2</option>
+          </select>
+        </p>
+
       </form>
     {%- else -%}
       <p>
