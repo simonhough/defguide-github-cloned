@@ -11,13 +11,28 @@
     </div>
 
     <div class="row">
+
+
       {%- comment -%}
         Display the product's images in a carousel format with sliding thumbnails at the bottom. If the product doesn't
         have any available images, a placeholder is display.
       {%- endcomment -%}
+
       <div class="col-md-5">
+
+          {%- comment S.H Start - I added the following code to add a color around each product image based on color values set in the metafield url:
+          at quizles.myshopify.com......edit=metafields.style.colour -%}
+          {%- endcomment -%}
+
         {%- if product.images.size > 0 -%}
-          <div id="product-image-carousel" class="carousel slide">
+            {%- if product.metafields.style.colour != blank -%}
+                {%- assign mColour = product.metafields.style.colour -%}
+
+          <div style="border: 5px solid {{ mColour }};"/>
+            {%- endif -%}
+
+
+              <div id="product-image-carousel" class="carousel slide">
             <div class="carousel-inner" role="listbox">
               {%- for image in product.images -%}
               <div class="carousel-item {% if forloop.first %}active{% endif %}">
