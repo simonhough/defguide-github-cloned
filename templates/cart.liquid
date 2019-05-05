@@ -55,13 +55,11 @@
         </table>
 
         <p class="cart-attribute__field">
-          <label>wah, I want my order gift wrapped</label><br>
-          <select required class="required" id="wah-i-want-my-order-gift-wrapped" name="attributes[wah, I want my order gift wrapped]">
-            <option value="Option 1"{% if cart.attributes["wah, I want my order gift wrapped"] == "Option 1" %} selected{% endif %}>Option 1</option>
-            <option value="Option 2"{% if cart.attributes["wah, I want my order gift wrapped"] == "Option 2" %} selected{% endif %}>Option 2</option>
-          </select>
+          <label>Gift Wrapped?</label><br>
+          <input type="radio" name="attributes[Gift Wrapped?]" value="No"{% if cart.attributes["Gift Wrapped?"] == "No" %} checked{% endif %}> <span>No</span><br>
+          <input type="radio" name="attributes[Gift Wrapped?]" value="Yes"{% if cart.attributes["Gift Wrapped?"] == "Yes" %} checked{% endif %}> <span>Yes</span><br>
+          <input type="radio" name="attributes[Gift Wrapped?]" value="option three"{% if cart.attributes["Gift Wrapped?"] == "option three" %} checked{% endif %}> <span>option three</span><br>
         </p>
-
       </form>
     {%- else -%}
       <p>
