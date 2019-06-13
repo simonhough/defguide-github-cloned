@@ -37,6 +37,11 @@
     {%- assign primary_link_list = linklists[section.settings.primary_link_list] -%}
     {%- unless primary_link_list == blank -%}
     <ul class="navbar-nav mr-auto">
+
+        {%- comment -%}
+          S.H - The Navigation Menu Link Loop Updated to Handle Submenu
+          Navigation Items
+        {%- endcomment -%}
       {%- for link in primary_link_list.links -%}
         {%- assign child_link_list_handle = link.title | handle -%}
         {%- assign child_link_list = linklists[child_link_list_handle] -%}

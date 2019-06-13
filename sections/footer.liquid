@@ -1,4 +1,7 @@
 {% schema %}
+    {%- comment -%}
+    S.H - Like with sections/header.liquid, we need to include a schema section at the top to allow users to customize the footer. It makes sense to use blocks when you’d like to allow the theme owner to define repeated sections of content, or control the order content appears in. In this footer, we defined two type of blocks within the footer section—a link_list type and a payment_icons type. The first allows the rendering of a vertical navigation menu within a footer column, the second displays a list of supported payment icons on the storefront.
+    {%- endcomment -%}
 {
   "name": "Footer",
   "blocks": [
@@ -23,6 +26,9 @@
 <footer class="bg-faded py-5">
   <div class="container">
     <div class="row">
+      {%- comment -%}
+      S.H - The code loops over each block configured in the section, checks its type, and includes either footer-block-link-list.liquid or footer-block-payment- icons.liquid. These are Liquid snippet files, stored in the theme’s snippets directory in order to logically partition and simplify the code in the footer.liquid section.
+      {%- endcomment -%}
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'link_list' -%}
